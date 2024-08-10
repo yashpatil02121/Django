@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #74b9ff, #a29bfe);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    height: 200px;
+    width: 200px;
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(to right, #ff7675, #ffeaa7);
+    opacity: 0.4;
+}
+
+.shape:first-child {
+    top: -80px;
+    left: -100px;
+}
+
+.shape:last-child {
+    bottom: -80px;
+    right: -100px;
+}
+
+form {
+    background: #ffffff;
+    max-width: 40%;
+    width: 100%;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+form h3 {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #2d3436;
+}
+
+form hr {
+    border: none;
+    height: 1px;
+    background-color: #dfe6e9;
+    margin: 10px 0 20px;
+}
+
+label {
+    color: #2d3436;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid #dfe6e9;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    background-color: #f1f2f6;
+    color: #2d3436;
+}
+
+input:focus {
+    border-color: #6c5ce7;
+    background-color: #ffffff;
+    outline: none;
+    box-shadow: 0 0 8px rgba(108, 92, 231, 0.2);
+}
+
+button {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #6c5ce7;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #a29bfe;
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #6c5ce7;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #a29bfe;
+}
+
+    </style>
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>Signup Page</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="background">
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+    <form action="" method="post">
+        {% csrf_token %} 
+        <h3>Signup Here</h3><hr>
+
+        <label for="username">Username</label><br>
+        <input type="text" placeholder="Username" name="username" id="username"><br>
+
+        <label for="email">Email</label><br>
+        <input type="email" placeholder="Email or Phone" name="email" id="email"><br>
+
+        <label for="password1">Password</label><br>
+        <input type="password" placeholder="Password" id="password1" name="password1"><br>
+
+
+        <label for="password2">Confirm Password</label><br>
+        <input type="password" placeholder="Confirm Password" id="password2" name="password2"><br><hr>
+        <button type="submit">Sign up</button>
+        
+        <a href="{% url 'login' %}" >Already have an account?</a>
+    </form>
+</body>
+</html>
